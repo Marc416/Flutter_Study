@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
-import 'package:fluttertoast/fluttertoast.dart';
+//import 'package:fluttertoast/';
 
 class Dice extends StatefulWidget {
   @override
@@ -100,11 +100,12 @@ void showToast(String message) {
   );
 
 
-  _showToast(){
-    flutterToast.showToast(
-      child: toast,
-      gravity: ToastGravity.BOTTOM,
-      toastDuration: Duration(seconds: 2)
-    );
-  }
+  //토스트 버전이 바뀌고 쓰는 법이 바뀜
+//  _showToast(){
+//    fluttertoast.showToast(
+//      child: toast,
+//      gravity: ToastGravity.BOTTOM,
+//      toastDuration: Duration(seconds: 2)
+//    );
+//  }
 }

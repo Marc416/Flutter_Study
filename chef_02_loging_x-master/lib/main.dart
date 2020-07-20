@@ -38,8 +38,8 @@ class _LogInState extends State<LogIn> {
       body: Builder(
         builder: (context) {
           return GestureDetector(
-            onTap: (){
-              FocusScope.of(context).unfocus();
+            onTap: () {
+              FocusScope.of(context).unfocus(); //타이핑 바를 내려줄때 쓰임
             },
             child: SingleChildScrollView(
               child: Column(
@@ -58,10 +58,8 @@ class _LogInState extends State<LogIn> {
                             primaryColor: Colors.teal,
                             inputDecorationTheme: InputDecorationTheme(
                                 labelStyle: TextStyle(
-                                    color: Colors.teal, fontSize: 15.0
-                                )
-                            )
-                        ),
+                                    color: Colors.teal, fontSize: 15.0))),
+                        //ThemeData안에 Child가 된거임
                         child: Container(
                           padding: EdgeInsets.all(40),
                           child: Column(
@@ -75,8 +73,8 @@ class _LogInState extends State<LogIn> {
                               ),
                               TextField(
                                 controller: controller2,
-                                decoration:
-                                    InputDecoration(labelText: 'Enter Password'),
+                                decoration: InputDecoration(
+                                    labelText: 'Enter Password'),
                                 keyboardType: TextInputType.text,
                                 obscureText: true,
                               ),
@@ -100,8 +98,9 @@ class _LogInState extends State<LogIn> {
                                         Navigator.push(
                                             context,
                                             MaterialPageRoute(
-                                                builder: (BuildContext context) =>
-                                                    Dice()));
+                                                builder:
+                                                    (BuildContext context) =>
+                                                        Dice()));
                                       } else if (controller.text == 'dice' &&
                                           controller2.text != '1234') {
                                         showSnackBar2(context);

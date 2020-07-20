@@ -23,6 +23,7 @@ class ScreenA extends StatelessWidget{
               child: Text('Go to Screen C'),
               onPressed: (){
                 Navigator.pushNamed(context, '/c');
+                print(context);
               }
           ),
         ],
