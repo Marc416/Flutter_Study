@@ -1,12 +1,16 @@
 import 'package:flutter/animation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:jr_v1/GPS/permission_status.dart';
 import 'package:jr_v1/home.dart';
 
-import 'Menu/record.dart';
+import 'Menu/recordbody.dart';
 import 'menu.dart';
 
-void main() => runApp(RunApp());
+void main() {
+
+  runApp(RunApp());
+}
 
 class RunApp extends StatefulWidget {
   @override
@@ -14,6 +18,7 @@ class RunApp extends StatefulWidget {
 }
 
 class _RunAppState extends State<RunApp> {
+  SetGpsPermission setGpsPermission = new SetGpsPermission();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
