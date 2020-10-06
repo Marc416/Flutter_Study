@@ -28,3 +28,10 @@ void main() {
     expect(find.text('1'), findsOneWidget);
   });
 }
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
