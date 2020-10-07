@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'subway_count_v2_main.dart';
+import 'subway_info.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -12,6 +12,7 @@ class SubwayPeopleCount extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: '지하철 승하차 정보',
+      debugShowCheckedModeBanner: false,
       home: MainPage(),
     );
   }
