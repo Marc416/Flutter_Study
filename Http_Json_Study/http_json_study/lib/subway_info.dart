@@ -5,9 +5,7 @@ import 'package:http/http.dart' as http;
 
 import 'model/subway_arrival.dart' as arrival;
 import 'api/subway_api.dart' as subway_api;
-import 'model/subway_arrival.dart';
 
-const int STATUS_OK = 200;
 
 class MainPage extends StatefulWidget {
   @override
@@ -23,7 +21,7 @@ class _MainPageState extends State<MainPage> {
   List<arrival.SubwayArrival> _data = [];
   bool _isLoading = false;
 
-  //카드는 뭐지..
+  //카드형 위젯(카드모양의 컨테이너라고 생각하면 됌)
   List<Card> _buildCards() {
 //  로그 한번볼것 이게 무슨의미이지
     print('>>> _data.length? ${_data.length}');
@@ -39,12 +37,11 @@ class _MainPageState extends State<MainPage> {
         child: Column(
           children: [
             AspectRatio(
-              aspectRatio: 18 / 11,
+//            가로:세로의 비율(이미지 사이즈를 항상 같은 비율로 유지할 수 있게)
+              aspectRatio: 2 / 1,
               child: Image.asset(
                 'assets/icon/subway.png',
                 fit: BoxFit.fitHeight,
-//                height: 10,
-//                width: 10,
               ),
             ),
             Expanded(
@@ -56,6 +53,7 @@ class _MainPageState extends State<MainPage> {
                     Text(
                       info.trainLineNum,
                       maxLines: 1,
+//                    글자가 한계를 넘어가면 생략한다. ellipsis->생략
                       overflow: TextOverflow.ellipsis,
                     ),
                     SizedBox(
@@ -65,7 +63,15 @@ class _MainPageState extends State<MainPage> {
                       info.arvlMsg2,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
+                    ),
+                    Text(
+                      's23rwserwsdfsdfsdasdqwdsdfsdfasdqwexdfsdsdfsdfsdfsdasdasdf',
+//                    텍스트 위젯이 한줄로 표현했을 때 볼수 있는 사이즈가 넘어가면 안보이게함
+//                    맥스라인으로 몇줄을 보여줄건지 정할 수 있음
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     )
+
                   ],
                 ),
               ),
@@ -183,6 +189,7 @@ class _MainPageState extends State<MainPage> {
                   padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                   child: Text('도착정보'),
                 ),
+//              expanded의 조상클래스
                 Flexible(
                   child: GridView.count(
                     crossAxisCount: 2,
