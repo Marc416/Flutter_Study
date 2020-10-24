@@ -21,7 +21,7 @@ class ListenLocationWidget extends StatefulWidget {
 class _ListenLocationState extends State<ListenLocationWidget> {
   final Location location = Location();
 
-  LocationData _location;
+  LocationData _locationData;
   StreamSubscription<LocationData> _locationSubscription;
   String _error;
 
@@ -39,7 +39,7 @@ class _ListenLocationState extends State<ListenLocationWidget> {
             setState(() {
               _error = null;
 
-              _location = currentLocation;
+              _locationData = currentLocation;
               publicLocationData = currentLocation;
             });
           });

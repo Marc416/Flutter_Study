@@ -1,4 +1,4 @@
-name: flutter_app
+name: gm_location_sample
 description: A new Flutter application.
 
 # The following line prevents the package from being accidentally published to
@@ -23,20 +23,17 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  google_maps_flutter: ^0.5.27+3
-  http: ^0.12.0+1
-  json_serializable: ^3.3.0
+  location_web: ^1.0.0
+
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.3
+  location: ^3.0.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  pedantic: ^1.9.0
-  build_runner: ^1.10.0
-  location: ^3.0.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
